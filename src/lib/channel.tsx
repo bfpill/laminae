@@ -25,7 +25,7 @@ type ChannelStoreType = ReturnType<typeof createChannelStore>
 const ChannelCtx = createContext<ChannelStoreType | null>(null)
 
 export function ChannelProvider({ children }: { children: ReactNode }) {
-  const storeRef = useRef<ChannelStoreType>()
+  const storeRef = useRef<ChannelStoreType>(null!)
   if (!storeRef.current) storeRef.current = createChannelStore()
   return <ChannelCtx.Provider value={storeRef.current}>{children}</ChannelCtx.Provider>
 }

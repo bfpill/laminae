@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import type { Policy, PosteriorMode, ModelPreset, DataMode } from './types'
 import type { CuspChannelState } from './channel'
-import { DEFAULT_Q0, A0, B0 } from './constants'
+import { A0, B0 } from './constants'
 import { modelConfig, simulate, coeffFromQ, normalizeSimplexWeights } from './engine'
 import { usePublish } from '@/lib/channel'
 import { DataSpacePlot } from './DataSpacePlot'

@@ -74,6 +74,6 @@ register({
       { name: 'className', type: 'string', description: 'Additional CSS classes' },
     ],
   },
-  component: LiveDoc as ComponentType<Record<string, unknown>>,
+  component: LiveDoc as unknown as ComponentType<Record<string, unknown>>,
   sampleData: { slug: '' },
 })

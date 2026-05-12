@@ -47,6 +47,7 @@ function preprocess(src: string): string {
 async function compilemdx(mdxString: string): Promise<MDXComponent> {
   const { default: Content } = await evaluate(preprocess(mdxString), {
     ...(runtime as Record<string, unknown>),
+    Fragment: (runtime as unknown as { Fragment: unknown }).Fragment,
     remarkPlugins: [remarkGfm, remarkMath, remarkCitations, remarkEmbeds],
     rehypePlugins: [
       [rehypeRaw, { passThrough: ['mdxJsxFlowElement', 'mdxJsxTextElement', 'mdxFlowExpression', 'mdxTextExpression', 'mdxjsEsm'] }],
